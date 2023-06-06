@@ -12,8 +12,7 @@ ax = fig.add_axes([0.15,0.15,.7,.7], frameon=True, aspect=1,
                   xticks=[], yticks=[])
 
 def text(x, y, _text):
-    color= "C1"
-    if not 0 < x < 1 or not 0 < y < 1:  color = "C0"
+    color = "C0" if not 0 < x < 1 or not 0 < y < 1 else "C1"
     size = 0.15
     ax.text(x, y, _text, color="white", #bbox={"color": "C1"},
             size="xx-large", weight="bold", ha="center", va="center")

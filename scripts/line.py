@@ -39,8 +39,15 @@ for x0,x1,style in zip(X0,X1,styles):
             solid_capstyle="projecting", linewidth=7)
     ax.plot([x0,x1],[y,y], color="black",
             solid_capstyle=style, linewidth=7)
-    ax.text((x0+x1)/2, y-0.2, '"%s"' % style,
-            size="x-small", ha="center", va="top", family="monospace")
+    ax.text(
+        (x0 + x1) / 2,
+        y - 0.2,
+        f'"{style}"',
+        size="x-small",
+        ha="center",
+        va="top",
+        family="monospace",
+    )
 
 ax.text(X0[0]-0.25, y+0.2, "Cap style", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "solid_capstyle", color="blue",
@@ -56,8 +63,15 @@ for x0,x1,style in zip(X0,X1,styles):
             linewidth=7, linestyle="--")
     ax.plot([x0,x1],[y,y], color="black", linewidth=7,
             linestyle="--", dash_capstyle=style)
-    ax.text((x0+x1)/2, y-0.2, '"%s"' % style,
-            size="x-small", ha="center", va="top", family="monospace")
+    ax.text(
+        (x0 + x1) / 2,
+        y - 0.2,
+        f'"{style}"',
+        size="x-small",
+        ha="center",
+        va="top",
+        family="monospace",
+    )
 ax.text(X0[0]-0.25, y+0.2, "Dash cap style", size="small", ha="left", va="baseline")
 ax.text(X1[-1]+0.25, y+0.2, "dash_capstyle", color="blue",
          size="small", ha="right", va="baseline", family="monospace")
@@ -71,9 +85,7 @@ styles = "-", ":", "--", "-.", (0,(0.01,2))
 for x0,x1,style in zip(X0,X1,styles):
     ax.plot([x0,x1],[y,y], color="black", linestyle=style,
             solid_capstyle="round", dash_capstyle="round", linewidth=3)
-    if isinstance(style,str): text = '"%s"' % style
-    else:                      text = '%s' % str(style)
-
+    text = f'"{style}"' if isinstance(style,str) else f'{str(style)}'
     ax.text((x0+x1)/2, y-0.2, text,
             size="x-small", ha="center", va="top", family="monospace")
 ax.text(X0[0]-0.25, y+0.2, "Line style", size="small", ha="left", va="baseline")
